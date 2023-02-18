@@ -1,0 +1,34 @@
+{
+  "name": "cloudwaitress-ghl-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p 8080",
+    "production": "node prod-server.js",
+    "deploy": "npm run build && gcloud app deploy",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@google-cloud/datastore": "^7.0.0",
+    "axios": "^0.27.2",
+    "chart.js": "^3.8.0",
+    "chartjs-adapter-date-fns": "^2.0.0",
+    "cookies-next": "^2.1.1",
+    "date-fns": "^2.29.2",
+    "next": "12.2.0",
+    "node-cache": "^5.1.2",
+    "path": "^0.12.7",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.4.0",
+    "react-chartjs-2": "^4.3.1",
+    "react-dom": "18.2.0",
+    "twilio": "^3.80.1"
+  },
+  "devDependencies": {
+    "eslint": "8.19.0",
+    "eslint-config-next": "12.2.0",
+    "sass": "^1.54.3"
+  }
+}

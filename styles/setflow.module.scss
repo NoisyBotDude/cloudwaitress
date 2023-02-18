@@ -1,0 +1,95 @@
+// import scss file
+@import "variables";
+
+.btns {
+    padding: 9px 13px;
+    color: $secondary;
+    border: none;
+    background-color: $primary;
+}
+
+.background {
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.background .shape {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+
+.form {
+    color: $secondary;
+    height: 500px;
+    width: 500px;
+    background-color: rgba(4, 4, 4, 0.456);
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    input {
+        margin-bottom: 9px;
+    }
+}
+
+.select {
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #ffffff74;
+    color: rgb(28, 28, 28);
+}
+
+.submitBtn {
+    margin-top: 50px;
+    width: 100%;
+    background-color: $primary;
+    color: $secondary;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.err {
+    color: $primary;
+}
+
+.locId {
+    color: $secondary;
+}
+
+.shape:first-child {
+    background: linear-gradient(#1845ad,
+            #23a2f6);
+    left: -130px;
+    top: -70px;
+}
+
+.shape:last-child {
+    background: linear-gradient(to right,
+            #ff512f,
+            #f09819);
+    right: -130px;
+    bottom: -70px;
+}
+
+.label {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
