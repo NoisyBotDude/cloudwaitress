@@ -15,6 +15,7 @@ const searchcontact = async (number, token) => {
 // check if the locationId exists in database
 export default async function type(req, res) {
     console.log('Request body from twilio flow : ', req.body);
+    console.log("this is working", req.body.body)
     /* req.body = {
         "tags":"text_back", // the tag that is mentioned in the twilio flow
         "caller": {{trigger.call.From}} , // the number called from
@@ -28,11 +29,27 @@ export default async function type(req, res) {
         "flow_sid": FN165b5b6cdf982a18e8e4e1d4941e25e0
         }
         */
-    let tags = req.body.tags;
-    let caller = req.body.caller;
-    let to = req.body.to;
-    let flow_sid = req.body.flow_sid;
 
+        // {
+        //     body: '{\n' +
+        //       '"tags":"textback",\n' +
+        //       '"caller": +919394527658 ,\n' +
+        //       '"to": +16282328164 ,\n' +
+        //       '"flow_sid": FN1aa96c71e72f9fef4c093701285776ac\n' +
+        //       '}'
+        //   }
+    // split the req.body.body in "+" sign
+    // req.body.body = req.body.body.split("+");
+    // console.log(req.body.body.split("\n")[2].split(",")[0].split(":")[1].trim())
+    let tags = req.body.body.split("\n")[1].split(",")[0].split(":")[1].trim().split("\"")[1];
+    console.log("this is tags: ", tags)
+    let caller = req.body.body.split("\n")[2].split(",")[0].split(":")[1].trim();
+    console.log("this is caller: ", caller)
+    let to = req.body.body.split("\n")[3].split(",")[0].split(":")[1].trim();
+    console.log("this is to: ", to)
+    let flow_sid = req.body.body.split("\n")[4].split(",")[0].split(":")[1].trim();
+    console.log("this is flow_sid: ", flow_sid)
+    
     try {
         var loc = await datastore.FilterEquals("locations", "sid", flow_sid);
         loc = loc[0];
@@ -40,6 +57,7 @@ export default async function type(req, res) {
             console.log("location not found");
             return;
         }
+        console.log("hello")
         var v1api = loc.ghlv1api;
 
         try {
