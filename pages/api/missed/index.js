@@ -57,7 +57,6 @@ export default async function type(req, res) {
             console.log("location not found");
             return;
         }
-        console.log("hello")
         var v1api = loc.ghlv1api;
 
         try {
